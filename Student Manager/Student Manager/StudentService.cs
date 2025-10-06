@@ -1,3 +1,5 @@
+using Student_Manager.Pages;
+
 public class StudentService : IStudentService
 {
     public required string Name { get; set; }
@@ -18,6 +20,20 @@ public class StudentService : IStudentService
                 break;
             }
         }
+    }
+    public List<Student> sortByName(List<Student> students)
+    {
+        students = students
+            .OrderBy(student => student.Name)
+            .ToList();
+        return students;
+    }
+    public List<Student> sortByBetyg(List<Student> students)
+    {
+        students = students
+            .OrderByDescending(student => student.Betyg)
+            .ToList();
+        return students;
     }
 }
 public class Student

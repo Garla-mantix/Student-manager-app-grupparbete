@@ -15,13 +15,6 @@ Studenter
     }
 </ul>
 
-
-<ul>
-    @foreach (Student student in students) {
-        <li>Namn: @student.Name Betyg: @student.Betyg</li>
-        }
-</ul>
-
 Skriv namn på studenten:
 <input @bind="name" placeholder="Skriv namn här..."/>
 Betyg (vid tillägg):

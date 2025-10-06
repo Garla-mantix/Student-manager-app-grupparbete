@@ -1,7 +1,45 @@
 ﻿@page "/"
+@inject IStudent Student
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Student Manager App</h1>
 
-Welcome to your new app.
+Studenter:
+
+
+<input @bind="name"/>
+<input @bind="betyg"/>
+<button class="btn btn-primary" @onclick="@Student.addStudent()">Lägg till student</button>
+<button class="btn btn-primary" @onclick="removeStudent">Ta bort student</button>
+
+@code {
+    public interface IStudent
+    {
+        public void addStudent() { }
+        public void removeStudent() { }
+        //string editStudent();
+    }  
+
+        int betyg = 0;
+        string name = string.Empty;
+    public class Student : IStudent
+    {
+
+        public required string Name { get; set; }
+        public int Betyg { get; set; }
+
+        List<Student> students = new List<Student> {
+            new() { Name = "Arber", Betyg = 5},
+            new() { Name = "Person", Betyg = 0},
+        };
+        public void addStudent(string name, int betyg) {
+            students.Add(new Student() { Name = name, Betyg = betyg });
+        }
+
+        public void removeStudent(string name) {
+            int index = students.IndexOf(students.);
+            students.RemoveAt(index);
+        }
+    }
+}

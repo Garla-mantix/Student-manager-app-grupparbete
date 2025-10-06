@@ -6,14 +6,24 @@
 <h1>Student Manager App</h1>
 
 Studenter:
+<ul>
+    @foreach (Student student in students) {
+        <li>Namn: @student.Name Betyg: @student.Betyg</li>
+        }
+</ul>
 
-
-<input @bind="name"/>
-<input @bind="betyg"/>
-<button class="btn btn-primary" @onclick="() => StudentService.addStudent(name, betyg)">Lägg till student</button>
-<button class="btn btn-primary" @onclick="() => StudentService.removeStudent(name)">Ta bort student</button>
+Skriv namn på studenten:
+<input @bind="name" placeholder="Skriv namn här..."/>
+Betyg (vid tillägg):
+<input @bind="betyg" placeholder="Skriv betyg här..."/>
+<button class="btn btn-primary" @onclick="() => StudentService.addStudent(students, name, betyg)">Lägg till student</button>
+<button class="btn btn-primary" @onclick="() => StudentService.removeStudent(students, name)">Ta bort student</button>
 
 @code {
     string name = string.Empty;
     int betyg = 0;
+    List<Student> students = new List<Student> {
+        new() { Name = "Arber", Betyg = 5},
+        new() { Name = "Person", Betyg = 0},
+    };
 }

@@ -1,5 +1,5 @@
 public interface IStudentService
 {
-    void addStudent(string Name, int Betyg);
-    void removeStudent(string Name);
+    void addStudent(List<Student> students, string Name, int Betyg);
+    void removeStudent(List<Student> students, string Name);
 }

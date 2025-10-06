@@ -3,16 +3,12 @@ public class StudentService : IStudentService
     public required string Name { get; set; }
     public int Betyg { get; set; }
 
-    List<Student> students = new List<Student> {
-        new() { Name = "Arber", Betyg = 5},
-        new() { Name = "Person", Betyg = 0},
-    };
-    public void addStudent(string name, int betyg)
+    public void addStudent(List<Student> students, string name, int betyg)
     {
         students.Add(new Student() { Name = name, Betyg = betyg });
     }
 
-    public void removeStudent(string name)
+    public void removeStudent(List<Student> students, string name)
     {
         foreach (var student in students)
         {

@@ -5,7 +5,17 @@
 
 <h1>Student Manager App</h1>
 
-Studenter:
+Studenter
+<ul>
+    @foreach (Student student in students)
+    {
+        <li style="color:@(student.Betyg >= 3 ? "green" : "red")">
+            Namn: @student.Name — Betyg: @student.Betyg
+        </li>
+    }
+</ul>
+
+
 <ul>
     @foreach (Student student in students) {
         <li>Namn: @student.Name Betyg: @student.Betyg</li>

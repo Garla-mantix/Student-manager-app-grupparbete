@@ -38,8 +38,11 @@ Studenter:
         }
 
         public void removeStudent(string name) {
-            int index = students.IndexOf(students.);
-            students.RemoveAt(index);
+            foreach (var student in students) {
+                if (student.Name.Contains(name)) {
+                    students.Remove(student);
+                }
+            }
         }
     }
 }

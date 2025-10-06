@@ -1,5 +1,5 @@
 ﻿@page "/"
-@inject IStudent Student
+@inject IStudentService StudentService
 
 <PageTitle>Home</PageTitle>
 
@@ -10,13 +10,10 @@ Studenter:
 
 <input @bind="name"/>
 <input @bind="betyg"/>
-<button class="btn btn-primary" @onclick="IStudent.addStudent(name, betyg)">Lägg till student</button>
-<button class="btn btn-primary" @onclick="IStudent.removeStudent(name)">Ta bort student</button>
+<button class="btn btn-primary" @onclick="() => StudentService.addStudent(name, betyg)">Lägg till student</button>
+<button class="btn btn-primary" @onclick="() => StudentService.removeStudent(name)">Ta bort student</button>
 
 @code {
-    
-string name = string.Empty;
-int betyg = 0;
-
-
+    string name = string.Empty;
+    int betyg = 0;
 }

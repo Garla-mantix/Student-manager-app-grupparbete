@@ -5,11 +5,15 @@
 
 <h1>Student Manager App</h1>
 
-Studenter:
+<ul>Studenter:</ul>
+<li>
+    
+</li>
 
 
-<input @bind="name"/>
-<input @bind="betyg"/>
+
+<input @bind="name" placeholder="Name of student"/>
+<input @bind="betyg" placeholder="Betyg"/>
 <button class="btn btn-primary" @onclick="IStudent.addStudent(name, betyg)">Lägg till student</button>
 <button class="btn btn-primary" @onclick="IStudent.removeStudent(name)">Ta bort student</button>
 

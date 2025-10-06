@@ -4,5 +4,4 @@ public interface IStudentService
     void removeStudent(List<Student> students, string Name);
     List<Student> sortByName(List<Student> students);
     List<Student> sortByBetyg(List<Student> students);
-
 }

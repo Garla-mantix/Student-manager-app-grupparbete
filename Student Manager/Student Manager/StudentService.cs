@@ -14,10 +14,14 @@ public class StudentService : IStudentService
     {
         foreach (var student in students)
         {
-            if (student.Name.Contains(name))
+            if (student.Name.ToLower() == name.ToLower())
             {
                 students.Remove(student);
                 break;
+            }
+            else
+            {
+                // Plats att lägga ifall man vill varna användaren om att studenten inte finns
             }
         }
     }

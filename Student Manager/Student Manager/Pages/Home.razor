@@ -18,8 +18,8 @@ Betyg (vid tillägg):
 <input @bind="betyg" placeholder="Skriv betyg här..."/>
 <button class="btn btn-primary" @onclick="() => StudentService.addStudent(students, name, betyg)">Lägg till student</button>
 <button class="btn btn-primary" @onclick="() => StudentService.removeStudent(students, name)">Ta bort student</button>
-<button class="btn btn-primary" @onclick="() => students = StudentService.sortByName(students)">sortByName</button>
-<button class="btn btn-primary" @onclick="() => students = StudentService.sortByBetyg(students)">sortByBetyg</button>
+<button class="btn btn-primary" @onclick="() => students = StudentService.sortByName(students)">Sortera efter namn</button>
+<button class="btn btn-primary" @onclick="() => students = StudentService.sortByBetyg(students)">Sortera efter betyg</button>
 
 @code {
     string name = string.Empty;

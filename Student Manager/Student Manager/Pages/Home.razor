@@ -10,36 +10,13 @@ Studenter:
 
 <input @bind="name"/>
 <input @bind="betyg"/>
-<button class="btn btn-primary" @onclick="@Student.addStudent()">Lägg till student</button>
-<button class="btn btn-primary" @onclick="removeStudent">Ta bort student</button>
+<button class="btn btn-primary" @onclick="IStudent.addStudent(name, betyg)">Lägg till student</button>
+<button class="btn btn-primary" @onclick="IStudent.removeStudent(name)">Ta bort student</button>
 
 @code {
-    public interface IStudent
-    {
-        public void addStudent() { }
-        public void removeStudent() { }
-        //string editStudent();
-    }  
+    
+string name = string.Empty;
+int betyg = 0;
 
-        int betyg = 0;
-        string name = string.Empty;
-    public class Student : IStudent
-    {
 
-        public required string Name { get; set; }
-        public int Betyg { get; set; }
-
-        List<Student> students = new List<Student> {
-            new() { Name = "Arber", Betyg = 5},
-            new() { Name = "Person", Betyg = 0},
-        };
-        public void addStudent(string name, int betyg) {
-            students.Add(new Student() { Name = name, Betyg = betyg });
-        }
-
-        public void removeStudent(string name) {
-            int index = students.IndexOf(students.);
-            students.RemoveAt(index);
-        }
-    }
 }

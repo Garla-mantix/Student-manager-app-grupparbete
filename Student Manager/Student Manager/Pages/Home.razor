@@ -18,6 +18,8 @@ Betyg (vid tillägg):
 <input @bind="betyg" placeholder="Skriv betyg här..."/>
 <button class="btn btn-primary" @onclick="() => StudentService.addStudent(students, name, betyg)">Lägg till student</button>
 <button class="btn btn-primary" @onclick="() => StudentService.removeStudent(students, name)">Ta bort student</button>
+<button class="btn btn-primary" @onclick="() => students = StudentService.sortByName(students)">Sortera efter namn</button>
+<button class="btn btn-primary" @onclick="() => students = StudentService.sortByBetyg(students)">Sortera efter betyg</button>
 
 @code {
     string name = string.Empty;
@@ -25,5 +27,6 @@ Betyg (vid tillägg):
     List<Student> students = new List<Student> {
         new() { Name = "Arber", Betyg = 5},
         new() { Name = "Person", Betyg = 0},
+        new () { Name = "Hej", Betyg = 3},
     };
 }
